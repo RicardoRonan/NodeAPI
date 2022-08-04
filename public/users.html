@@ -18,7 +18,7 @@
     <script>
       let users = [];
       const uContainer = document.querySelector("#users");
-      fetch("http://localhost:6969/users")
+      fetch("https://nodeapi420.herokuapp.com/users")
         .then((res) => res.json())
         .then((data) => {
           users = data;

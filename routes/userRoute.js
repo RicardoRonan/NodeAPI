@@ -137,13 +137,12 @@ router.post("/forgot-psw", (req, res) => {
         res.status(400), res.send("Email not found");
       } else {
         // Allows me to connect to the given email account || Your Email
-
         const transporter = nodemailer.createTransport({
-          host: "smtp.ethereal.email",
-          port: 587,
+          host: process.env.MAILERHOST,
+          port: process.env.MAILERPORT,
           auth: {
-            user: "jasper.heidenreich0@ethereal.email",
-            pass: "mFWbw71Rk5MTnzT4g9",
+            user: process.env.MAILERUSER,
+            pass: process.env.MAILERPASS,
           },
         });
 

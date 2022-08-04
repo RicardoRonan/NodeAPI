@@ -62,7 +62,7 @@
       let email = document.getElementById("email").value;
       async function Login(e) {
         e.preventDefault();
-        fetch("http://localhost:6969/users/login", {
+        fetch("https://nodeapi420.herokuapp.com/users/login", {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -73,7 +73,7 @@
           }),
         }).then((res) => console.log(res.json()));
         // document.getElementById("submit-btn").innerHTML =
-        //   "Users" + window.location.replace("http://localhost:6969/users.html");
+        //   "Users" + window.location.replace("https://nodeapi420.herokuapp.com/users.html");
       }
     </script>
     <script

@@ -21,7 +21,7 @@
       let email = document.getElementById("email").value;
       async function forgotPsw(event) {
         event.preventDefault();
-        await fetch("http://localhost:6969/users/forgot-psw", {
+        await fetch("https://nodeapi420.herokuapp.com/users/forgot-psw", {
           method: "POST",
           body: JSON.stringify({
             email: email,

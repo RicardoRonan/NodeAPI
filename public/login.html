@@ -62,7 +62,7 @@
       let email = document.getElementById("email").value;
       async function Login(e) {
         e.preventDefault();
-        fetch("https://localhost:6969/users/login", {
+        fetch("https://nodeapi420.herokuapp.com/users/login", {
           method: "POST",
           headers: {
             "Content-type": "application/json",

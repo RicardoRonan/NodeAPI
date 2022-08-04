@@ -1,3 +1,4 @@
+const nodemailer = require("nodemailer");
 const express = require("express");
 const router = express.Router();
 const con = require("../lib/dbConnection");
@@ -123,7 +124,6 @@ router.get("/users/verify", (req, res) => {
   return authController.Verify(req, res);
 });
 // Importing the dependencies
-const nodemailer = require("nodemailer");
 
 router.post("/forgot-psw", (req, res) => {
   try {
@@ -138,11 +138,11 @@ router.post("/forgot-psw", (req, res) => {
       } else {
         // Allows me to connect to the given email account || Your Email
         const transporter = nodemailer.createTransport({
-          host: process.env.MAILERHOST,
-          port: process.env.MAILERPORT,
+          host: "smtp.ethereal.email",
+          port: 587,
           auth: {
-            user: process.env.MAILERUSER,
-            pass: process.env.MAILERPASS,
+            user: "jasper.heidenreich0@ethereal.email",
+            pass: "mFWbw71Rk5MTnzT4g9",
           },
         });
 
@@ -158,7 +158,7 @@ router.post("/forgot-psw", (req, res) => {
             <br>
             <h4>Click link below to reset your password</h4>
 
-            <a href="http://localhost:6969/resetpsw.html">
+            <a href="https://nodeapi420.herokuapp.com/resetpsw.html">
               Click Here to Reset Password
               user_id = ${result[0].user_id}
             </a>

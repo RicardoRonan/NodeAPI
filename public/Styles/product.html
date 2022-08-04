@@ -16,7 +16,7 @@
     <script>
       let products = [];
       const uContainer = document.querySelector("#products");
-      fetch("https://nodeapi420.herokuapp.com/products")
+      fetch("https://localhost:6969/products")
         .then((res) => res.json())
         .then((data) => {
           products = data;

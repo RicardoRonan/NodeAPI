@@ -24,7 +24,7 @@
         await fetch("https://nodeapi420.herokuapp.com/users/forgot-psw", {
           method: "POST",
           body: JSON.stringify({
-            email: email,
+            email,
           }),
           headers: {
             "Content-type": "application/json; charset=UTF-8",

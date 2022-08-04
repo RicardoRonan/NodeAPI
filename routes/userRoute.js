@@ -187,7 +187,10 @@ router.post("/forgot-psw", (req, res) => {
           if (error) {
             console.log(error);
           } else {
-            res.send("Please Check your email", result[0].user_id);
+            res.status(200).json({
+              status: "ok",
+              data: result,
+            });
           }
         });
       }

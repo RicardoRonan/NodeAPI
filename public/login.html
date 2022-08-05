@@ -72,6 +72,7 @@
             password: document.getElementById("password").value,
           }),
         }).then((res) => console.log(res.json()));
+        window.localStorage.setItem("token");
         // document.getElementById("submit-btn").innerHTML =
         //   "Users" +
         //   window.location.replace(

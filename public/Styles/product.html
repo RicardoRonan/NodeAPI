@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Products</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,24 +13,50 @@
     />
   </head>
   <body>
+    <div id="Products"></div>
     <script>
+      //    let products = [];
+      //    const uContainer = document.querySelector("#products");
+      //    fetch("https://localhost:6969/products", {
+      //      method: "GET",
+      //      headers: {
+      //        "Content-type": "application/json",
+      //      },
+      //    })
+
+      //   let data = await response.json();
+      //   if (data.length === 0) {
+      //      alert("products empty");
+
+      //   }else {
+      //      showproducts(data);
+      //   }
       let products = [];
-      const uContainer = document.querySelector("#products");
-      fetch("https://localhost:6969/products")
+      const pContainer = document.querySelector("#Products");
+      fetch("http://localhost:6969/products")
         .then((res) => res.json())
         .then((data) => {
           products = data;
           console.log(data);
           showproducts(products);
         });
+
       function showproducts(products) {
-        uContainer.innerHTML = "";
+        pContainer.innerHTML = "";
         products.forEach((product) => {
-          uContainer.innerHTML += `
-      <div class="card text-center fs-5">
-     
-      </div>
-          `;
+          pContainer.innerHTML += `
+       <div class="card text-center fs-5">
+        <p>${product.sku}</p>
+        <p>${product.name}</p>
+        <p>${product.price}</p>
+        <p>${product.weight}</p>
+        <p>${product.description}</p>
+        <p>${product.category}</p>
+        <p>${product.create_date}</p>
+        <p>${product.stock}</p>
+
+       </div>
+           `;
         });
       }
     </script>

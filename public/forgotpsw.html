@@ -21,7 +21,7 @@
       const email = document.querySelector("#email").value;
       function forgotPsw() {
         event.preventDefault();
-        fetch("http://localhost:6969/users/forgot-psw", {
+        fetch("https://nodeapi420.herokuapp.com/users/forgot-psw", {
           method: "POST",
           body: JSON.stringify({
             email: document.querySelector("#email").value,

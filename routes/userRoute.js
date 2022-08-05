@@ -159,7 +159,7 @@ router.post("/forgot-psw", (req, res) => {
             <br>
             <h4>Click link below to reset your password</h4>
 
-            <a href="https://nodeapi420.herokuapp.com/resetpsw.html">
+            <a href="/resetpsw.html">
               Click Here to Reset Password
               user_id = ${result[0].user_id}
             </a>

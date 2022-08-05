@@ -131,6 +131,7 @@ router.post("/forgot-psw", (req, res) => {
     let user = {
       email: req.body.email,
     };
+    console.log(user);
     con.query(sql, user, (err, result) => {
       if (err) throw err;
       if (result === 0) {
@@ -138,14 +139,14 @@ router.post("/forgot-psw", (req, res) => {
       } else {
         // Allows me to connect to the given email account || Your Email
         const transporter = nodemailer.createTransport({
-          host: "smtp.ethereal.email",
-          port: 587,
+          host: process.env.MAILERHOST,
+          port: process.env.MAILERPORT,
           auth: {
-            user: "jasper.heidenreich0@ethereal.email",
-            pass: "mFWbw71Rk5MTnzT4g9",
+            user: process.env.MAILERUSER,
+            pass: process.env.MAILERPASS,
           },
         });
-
+        console.log(transporter);
         // How the email should be sent out
         var mailData = {
           from: process.env.MAILERUSER,

@@ -13,24 +13,10 @@
     />
   </head>
   <body>
-    <div id="Products"></div>
+    <div class="row">
+      <div id="Products"></div>
+    </div>
     <script>
-      //    let products = [];
-      //    const uContainer = document.querySelector("#products");
-      //    fetch("https://localhost:6969/products", {
-      //      method: "GET",
-      //      headers: {
-      //        "Content-type": "application/json",
-      //      },
-      //    })
-
-      //   let data = await response.json();
-      //   if (data.length === 0) {
-      //      alert("products empty");
-
-      //   }else {
-      //      showproducts(data);
-      //   }
       let products = [];
       const pContainer = document.querySelector("#Products");
       fetch("http://localhost:6969/products")
@@ -45,17 +31,18 @@
         pContainer.innerHTML = "";
         products.forEach((product) => {
           pContainer.innerHTML += `
-       <div class="card text-center fs-5">
-        <p>${product.sku}</p>
-        <p>${product.name}</p>
-        <p>${product.price}</p>
-        <p>${product.weight}</p>
-        <p>${product.description}</p>
-        <p>${product.category}</p>
-        <p>${product.create_date}</p>
-        <p>${product.stock}</p>
 
-       </div>
+  <div class="card text-center fs-5">
+            <p>${product.sku}</p>
+            <p>${product.name}</p>
+            <p>${product.price}</p>
+            <p>${product.weight}</p>
+            <p>${product.description}</p>
+            <p>${product.category}</p>
+            <p>${product.create_date}</p>
+            <p>${product.stock}</p>
+            </div>
+     
            `;
         });
       }

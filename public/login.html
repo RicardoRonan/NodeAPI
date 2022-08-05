@@ -18,44 +18,53 @@
     <link rel="stylesheet" href="./Styles/loginStyles.css" />
   </head>
   <body>
-    <div id="logins"></div>
+    <section id="login">
+      <div id="logins"></div>
 
-    <form onsubmit="Login(event)">
-      <div class="iconscontainer p-5">
-        <i class="fa-solid fa-user" id="usericon"></i>
-      </div>
+      <form onsubmit="Login(event)" class="bg-black">
+        <div class="iconscontainer p-5">
+          <i class="fa-solid fa-user" id="usericon"></i>
+        </div>
 
-      <div class="container">
-        <label for="email"><b>Email</b></label>
-        <input
-          type="email"
-          placeholder="Enter Email"
-          name="email"
-          id="email"
-          required
-        />
+        <div class="container">
+          <label for="email" class="text-light"><b>Email</b></label>
+          <input
+            type="email"
+            placeholder="Enter Email"
+            name="email"
+            id="email"
+            required
+          />
 
-        <label for="password"><b>Password</b></label>
-        <input
-          type="password"
-          id="password"
-          placeholder="Enter Password"
-          name="password"
-          required
-        />
+          <label for="password" class="text-light"><b>Password</b></label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter Password"
+            name="password"
+            required
+          />
 
-        <button type="submit" id="submit-btn">Login</button>
-        <label>
-          <input type="checkbox" checked="checked" name="remember" /> Remember
-          me
-        </label>
-      </div>
+          <button type="submit" id="submit-btn">Login</button>
+          <label class="text-light">
+            <input
+              type="checkbox"
+              checked="checked"
+              name="remember"
+              class="text-light"
+            />
+            Remember me
+          </label>
+        </div>
 
-      <div class="container" style="background-color: #f1f1f1">
-        <button type="button" class="cancelbtn">Cancel</button>
-        <span class="psw">Forgot <a href="forgotpsw.html">password?</a></span>
-      </div>
-    </form>
+        <div class="container" class="bg-dark">
+          <button type="button" class="cancelbtn">Cancel</button>
+          <span class="psw text-light"
+            >Forgot <a href="forgotpsw.html">password?</a></span
+          >
+        </div>
+      </form>
+    </section>
 
     <script>
       let password = document.getElementById("password").value;

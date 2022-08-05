@@ -13,18 +13,18 @@
     />
   </head>
   <body>
-    <form onsubmit="forgotPsw(event)">
+    <form onsubmit="forgotPsw()">
       <input type="email" placeholder="Your email" id="email" />
       <button type="submit">Submit</button>
     </form>
     <script>
-      let email = document.getElementById("email").value;
-      async function forgotPsw(event) {
+      const email = document.querySelector("#email").value;
+      function forgotPsw() {
         event.preventDefault();
-        await fetch("http://localhost:6969/users/forgot-psw", {
+        fetch("http://localhost:6969/users/forgot-psw", {
           method: "POST",
           body: JSON.stringify({
-            email,
+            email: document.querySelector("#email").value,
           }),
           headers: {
             "Content-type": "application/json; charset=UTF-8",
@@ -32,6 +32,7 @@
         })
           .then((res) => res.json())
           .then((data) => {
+            console.log(body);
             let user = data.data[0];
             let user_id = user.user_id;
             window.localStorage.setItem("user_id", user_id);
